@@ -1,6 +1,23 @@
+h1{
+  text-align: center;
+}
 body {
     color:darkslategray;
-    
+    margin-left: 2rem;
+    margin-right: 2rem;
+   
+}
+
+#content{
+  /* justify-self: center; */
+  display: block;
+  background-color:slategrey;
+  border: #045daa;
+  border-width: 15px;
+  border-style: double;
+  border-radius: 10px;
+  
+  
 }
 /* Dropdown Button */
 .dropbtn {
@@ -49,23 +66,29 @@ body {
 /* ---------------card formatting--------------- */
 
 #state-cards-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
   background-color: rgb(203, 208, 181);
-  align-content: center;
-  width: 20rem;
+  border-radius: 10px;
+  /* align-content: center; */
+  /* width: 20rem; */
   margin: 1rem 2rem;
 }  
 
 .card {
     text-align: center;
+    color: black;
+    font-stretch: expanded;
     border: grey solid 1px;
+    background-color: #8b6f4e;
     padding: 1rem;
-    width: 15rem;
-    height: 10rem;
-    display: inline-grid;
     margin: 1rem 2rem;
-    box-shadow: 3px 4px #e04b52
+    box-shadow: 3px 4px #e04b52;
+    border-radius: 10px;
   }
 
   .button{
-    border-style:double ;
+    border-style:double;
+    margin-top: 10px;
+    
   }

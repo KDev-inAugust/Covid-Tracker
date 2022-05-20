@@ -14,7 +14,7 @@ function createStateALink (){
                 a.id=x;
                 a.innerText=`${data[x].state}`;
                 a.addEventListener('click', ()=>{
-                    renderStateCard(data[x].state, data[x].cases, data[x].casesPerOneMillion);
+                    renderStateCard(data[x].state, data[x].cases, data[x].active, data[x].casesPerOneMillion);
                         console.log(data[x].state)
                 });
                 }
@@ -25,11 +25,11 @@ function createStateALink (){
 
 createStateALink();
 
-function renderStateCard(state, cases, casesPerMillion){
+function renderStateCard(state, cases, activeCases, casesPerMillion){
     const div=document.createElement('div');
     const removeButton=document.createElement("BUTTON");
     cardsContainer.append(div);
-    div.innerText=(`${state} \n cases:${cases} \n cases per one million:${casesPerMillion}`)
+    div.innerText=(`${state} \n cases:${cases} \n active cases:${activeCases} \ncases per one million:${casesPerMillion}`)
     div.append(removeButton);
     div.className="card";
     removeButton.innerText=('remove this card \n X');
