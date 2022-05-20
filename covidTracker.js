@@ -1,4 +1,4 @@
-
+const cardsContainer = document.getElementById("state-cards-container")
 const stateDropdown = document.getElementById("dropdown-content");
 //const a = document.createElement('a');
 
@@ -10,12 +10,13 @@ function createStateALink (){
         .then(data=>{
             for(let x=0; x<data.length; x++){
                 const a = document.createElement('a');
-                console.log('index ' + x);
                 stateDropdown.append(a);
                 a.id=x;
                 a.innerText=`${data[x].state}`;
-                console.log(`state data: ${data[x].state}`);
-                
+                a.addEventListener('click', ()=>{
+                    renderStateCard(data[x].state, data[x].cases, data[x].casesPerOneMillion);
+                        console.log(data[x].state)
+                });
                 }
             }
         );
@@ -23,3 +24,21 @@ function createStateALink (){
 }
 
 createStateALink();
+
+function renderStateCard(state, cases, casesPerMillion){
+    const div=document.createElement('div');
+    const removeButton=document.createElement("BUTTON");
+    cardsContainer.append(div);
+    div.innerText=(`${state} \n cases:${cases} \n cases per one million:${casesPerMillion}`)
+    div.append(removeButton);
+    div.className="card";
+    removeButton.innerText=('remove this card \n X');
+    removeButton.className="button";
+    removeButton.addEventListener('click', (e)=>{handleDelete(e)})
+    console.log('render attempted');
+}
+
+function handleDelete(e){
+    e.target.parentNode.remove();
+    }
+

@@ -1,10 +1,13 @@
 body {
     color:darkslategray;
+    
 }
-
 /* Dropdown Button */
 .dropbtn {
-    background-color: #04AA6D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #045daa;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -43,3 +46,26 @@ body {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+/* ---------------card formatting--------------- */
+
+#state-cards-container{
+  background-color: rgb(203, 208, 181);
+  align-content: center;
+  width: 20rem;
+  margin: 1rem 2rem;
+}  
+
+.card {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 10rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #e04b52
+  }
+
+  .button{
+    border-style:double ;
+  }
