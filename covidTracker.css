@@ -8,6 +8,12 @@ body {
    
 }
 
+#table, th, tr, td{
+border: black;
+border-width: 3px;
+border-style: solid;
+}
+
 html{
   background-color: #d5d281;
 }

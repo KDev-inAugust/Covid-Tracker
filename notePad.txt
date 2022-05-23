@@ -2,6 +2,11 @@
 .then (res=> res.json())
         .then(data=>console.log(data));
 
+
+        to fetch yesterday, which has the deaths info use the following query in teh fetch URL
+        https://corona.lmao.ninja/v3/covid-19/states?yesterday=query
+
+
 //-----------data format-------------
 0: {state: 'California', updated: 1653003056411, cases: 9404179, todayCases: 4638, deaths: 91198, …}
 1: {state: 'Texas', updated: 1653003056411, cases: 6877040, todayCases: 0, deaths: 88713, …}
