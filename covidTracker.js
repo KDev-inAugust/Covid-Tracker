@@ -1,7 +1,6 @@
 const cardsContainer = document.getElementById("state-cards-container")
 const stateDropdown = document.getElementById("dropdown-content");
 
-//const a = document.createElement('a');
 
 //-------iterates over every data[i].state to create the dropdown menu-----
 function createStateALink (){
@@ -25,7 +24,7 @@ function createStateALink (){
 }
 
 createStateALink();
-
+//----------this is the funtion that is called inside "createStateLink to create the card and populate it with info
 function renderStateCard(state, cases, activeCases, casesPerMillion){
     const div=document.createElement('div');
     const removeButton=document.createElement("BUTTON");
@@ -43,6 +42,32 @@ function handleDelete(e){
     e.target.parentNode.remove();
     }
 
+
+/* -----------the following code and accompanying function will average active cases for displayed cards-------
+make a for loop where x is the document.getElementsByClassName('card')[x], 
+it grabs all the active cases, pushes them to an array and then averages them */
+
+const activeArray=[];
+function averageDisplayedCards(){
+    SelectedCardArray=document.getElementsByClassName('card');
+    for (x=0; x<SelectedCardArray.length; x++){
+        activeArray.push(parseInt(SelectedCardArray[x].innerText.split(':')[2]));
+    }
+    function averageActive(){
+        let sum=activeArray.reduce(
+        (acc, elem)=>acc+elem,0
+        );
+        let avg = sum/activeArray.length;
+        console.log('active array: ' + activeArray + ' sum: ' + sum);
+        console.log('avg active cases: ' + avg);
+        
+        }
+    averageActive();
+}
+//----------code a button to display the average for displayed cards---------
+
+
+
 //-----------------------fill table data---------------
 //creates html elements and fills them with the table information
 
@@ -55,11 +80,18 @@ function tableDataUs(){
                 let tr1=document.createElement('tr');
                 let td1=document.createElement('td');
                 let td2=document.createElement('td');
+                let td3=document.createElement('td');
+                let td4=document.createElement('td');
+
                 table.append(tr1);
                 tr1.append(td1);
                 td1.innerText=data[x].state;
                 tr1.append(td2);
                 td2.innerText=data[x].cases;
+                tr1.append(td3);
+                td3.innerText=data[x].active;
+                tr1.append(td4);
+                td4.innerText=data[x].casesPerOneMillion;
             }
         })
 
