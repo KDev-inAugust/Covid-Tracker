@@ -66,7 +66,16 @@ function averageDisplayedCards(){
 }
 //----------code a button to display the average for displayed cards---------
 
+function displayAverageActive(){
+    const averageActiveButton=document.getElementById('averageActive');
+    averageActiveButton.addEventListener('click', (e)=>{
+        console.log(e); averageDisplayedCards();
+        
+        }
+        )
+}
 
+displayAverageActive();
 
 //-----------------------fill table data---------------
 //creates html elements and fills them with the table information

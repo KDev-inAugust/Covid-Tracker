@@ -3,9 +3,20 @@ h1{
 }
 body {
     color:darkslategray;
-    /* margin-left: 2rem;
-    margin-right: 2rem; */
-   
+}
+
+button{
+    align-items: center;
+    justify-content: center;
+    background-color: #045daa;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+button:hover{
+  background-color: slategrey;
 }
 
 #table, th, tr, td{
@@ -19,19 +30,20 @@ html{
 }
 
 #content{
-  /* justify-self: center; */
   display: block;
   background-color:slategrey;
   border: #045daa;
   border-width: 15px;
   border-style: double;
   border-radius: 10px;
+  padding:0px;
   
   
 }
 /* Dropdown Button */
 .dropbtn {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: center;
     background-color: #045daa;
