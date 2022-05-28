@@ -1,6 +1,7 @@
 const cardsContainer = document.getElementById("state-cards-container")
 const stateDropdown = document.getElementById("dropdown-content");
-
+const averageActiveOutput = document.getElementById("averageActiveOutput");
+let avg;
 
 //-------iterates over every data[i].state to create the dropdown menu-----
 function createStateALink (){
@@ -24,7 +25,7 @@ function createStateALink (){
 }
 
 createStateALink();
-//----------this is the funtion that is called inside "createStateLink to create the card and populate it with info
+//----------this is the funtion that is called inside "createStateLink" to create the card and populate it with info
 function renderStateCard(state, cases, activeCases, casesPerMillion){
     const div=document.createElement('div');
     const removeButton=document.createElement("BUTTON");
@@ -47,8 +48,9 @@ function handleDelete(e){
 make a for loop where x is the document.getElementsByClassName('card')[x], 
 it grabs all the active cases, pushes them to an array and then averages them */
 
-const activeArray=[];
+
 function averageDisplayedCards(){
+    const activeArray=[];
     SelectedCardArray=document.getElementsByClassName('card');
     for (x=0; x<SelectedCardArray.length; x++){
         activeArray.push(parseInt(SelectedCardArray[x].innerText.split(':')[2]));
@@ -57,9 +59,10 @@ function averageDisplayedCards(){
         let sum=activeArray.reduce(
         (acc, elem)=>acc+elem,0
         );
-        let avg = sum/activeArray.length;
+        avg = sum/activeArray.length;
         console.log('active array: ' + activeArray + ' sum: ' + sum);
         console.log('avg active cases: ' + avg);
+    
         
         }
     averageActive();
@@ -70,6 +73,7 @@ function displayAverageActive(){
     const averageActiveButton=document.getElementById('averageActive');
     averageActiveButton.addEventListener('click', (e)=>{
         console.log(e); averageDisplayedCards();
+        averageActiveOutput.innerText=`Average active cases for selected cards: ${avg.toFixed(2)}`;
         
         }
         )
