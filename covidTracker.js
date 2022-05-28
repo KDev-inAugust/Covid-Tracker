@@ -1,7 +1,9 @@
 const cardsContainer = document.getElementById("state-cards-container")
 const stateDropdown = document.getElementById("dropdown-content");
 const averageActiveOutput = document.getElementById("averageActiveOutput");
+const averagePerMillionOutput = document.getElementById("averagePerMillionOutput");
 let avg;
+let avg2;
 
 //-------iterates over every data[i].state to create the dropdown menu-----
 function createStateALink (){
@@ -67,14 +69,33 @@ function averageDisplayedCards(){
         }
     averageActive();
 }
+//------------the following function averages the cases per million and displayes them------
+function averagePerMillionDisplayed(){
+    const activeArray=[];
+    SelectedCardArray=document.getElementsByClassName('card');
+    for (x=0; x<SelectedCardArray.length; x++){
+        activeArray.push(parseInt(SelectedCardArray[x].innerText.split(':')[3]));
+    }
+    function averageActive(){
+        let sum=activeArray.reduce(
+        (acc, elem)=>acc+elem,0
+        );
+        avg2 = sum/activeArray.length;
+        console.log('active per million array: ' + activeArray + ' sum: ' + sum);
+        console.log('avg permillion cases: ' + avg2);
+    
+        
+        }
+    averageActive();
+}
 //----------code a button to display the average for displayed cards---------
 
 function displayAverageActive(){
     const averageActiveButton=document.getElementById('averageActive');
     averageActiveButton.addEventListener('click', (e)=>{
-        console.log(e); averageDisplayedCards();
-        averageActiveOutput.innerText=`Average active cases for selected cards: ${avg.toFixed(2)}`;
-        
+        console.log(e); averageDisplayedCards(); averagePerMillionDisplayed();
+        averageActiveOutput.innerText=`Average active cases for displayed states: ${avg.toFixed(2)}`;
+        averagePerMillionOutput.innerText=`Average cases per million for displayed states ${avg2.toFixed(2)}`;
         }
         )
 }
