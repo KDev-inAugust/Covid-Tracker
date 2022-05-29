@@ -83,8 +83,6 @@ function averagePerMillionDisplayed(){
         avg2 = sum/activeArray.length;
         console.log('active per million array: ' + activeArray + ' sum: ' + sum);
         console.log('avg permillion cases: ' + avg2);
-    
-        
         }
     averageActive();
 }
@@ -93,7 +91,7 @@ function averagePerMillionDisplayed(){
 function displayAverageActive(){
     const averageActiveButton=document.getElementById('averageActive');
     averageActiveButton.addEventListener('click', (e)=>{
-        console.log(e); averageDisplayedCards(); averagePerMillionDisplayed();
+        averageDisplayedCards(); averagePerMillionDisplayed();
         averageActiveOutput.innerText=`Average active cases for displayed states: ${avg.toFixed(2)}`;
         averagePerMillionOutput.innerText=`Average cases per million for displayed states ${avg2.toFixed(2)}`;
         }
