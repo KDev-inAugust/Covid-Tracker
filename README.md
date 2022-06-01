@@ -8,7 +8,7 @@ The app has three main features
 
 3- once these custom territories are selected the user can average data for total active cases and cases per million.
 
-This fucntionality is intended to be used by people who only want "at-a-glance" information for the few states they have family in or the states they may be planning to travvelling in.
+This fucntionality is intended to be used by people who only want "at-a-glance" information for the few states they have family in or the states they may be planning to travel to.
 
 Both the grid and the dropdown menu state selector are arranged by the territory that has had the most cases and both of these are populated by the API.
 This means that if one state surpases another both the dropdown and the grid will rearrange accordingly. 
