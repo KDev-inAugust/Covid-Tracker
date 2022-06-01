@@ -12,4 +12,4 @@ This fucntionality is intended to be used by people who only want "at-a-glance" 
 
 Both the grid and the dropdown menu state selector are arranged by the territory that has had the most cases and both of these are populated by the API.
 This means that if one state surpases another both the dropdown and the grid will rearrange accordingly. 
-The custom card views can be edited and added to or subtracted to withour refreshing the browser and the averages always reflect only displayed cards so no borwser refresh is ever necessary. 
+The custom card views can be edited and added to or subtracted to without refreshing the browser, and the averages always reflect only displayed cards so no browser refresh is ever necessary. 
